@@ -51,7 +51,13 @@ public class Conta {
 
 	public double debitar(double valor) {
 		this.saldo -= valor;
+		if(valor>this.getSaldo()) {
+			System.out.println("Operação invalida! O valor não pode ser maior que o saldo");
+			return this.getSaldo();
+			
+		}else {
 		return this.getSaldo();
+		}
 	}
 
 	public double cashBack(double valor) {
