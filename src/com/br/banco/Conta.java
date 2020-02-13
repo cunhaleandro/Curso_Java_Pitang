@@ -34,12 +34,10 @@ public class Conta {
 		this.cliente = cliente;
 	}
 
-	
 	public void setNumero(String num) {
 		this.numero = num;
 	}
 
-	
 	public void setSaldo(double valor) {
 		this.saldo = valor;
 	}
@@ -50,13 +48,14 @@ public class Conta {
 	}
 
 	public double debitar(double valor) {
-		this.saldo -= valor;
-		if(valor>this.getSaldo()) {
+
+		if (valor > this.getSaldo()) {
+			this.saldo -= valor;
 			System.out.println("Operação invalida! O valor não pode ser maior que o saldo");
 			return this.getSaldo();
-			
-		}else {
-		return this.getSaldo();
+
+		} else {
+			return this.getSaldo();
 		}
 	}
 
