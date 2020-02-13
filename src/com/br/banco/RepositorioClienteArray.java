@@ -80,4 +80,9 @@ public class RepositorioClienteArray {
 		}
 
 	}
+
+	@Override
+	public String toString() {
+		return "RepositorioClienteArray [clientes=" + Arrays.toString(clientes) + ", indice=" + indice + "]";
+	}
 }
