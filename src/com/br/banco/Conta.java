@@ -4,7 +4,8 @@ public class Conta {
 	private String numero;
 	private double saldo;
 	private Cliente cliente;
-	public static final double PRIMEIRO_VALOR_SALDO = 100;
+	private static final double PRIMEIRO_VALOR_SALDO = 100;
+	private static final double CASH_BACK = 0.1;
 
 	public Conta() {
 
@@ -13,7 +14,7 @@ public class Conta {
 	public Conta(String numero, double saldo, Cliente cliente) {
 		super();
 		this.numero = numero;
-		this.saldo = Conta.PRIMEIRO_VALOR_SALDO;
+		this.saldo = PRIMEIRO_VALOR_SALDO;
 		this.cliente = cliente;
 	}
 
@@ -42,9 +43,8 @@ public class Conta {
 		this.saldo = valor;
 	}
 
-	public double creditar(double valor) {
+	public void creditar(double valor) {
 		this.saldo += valor;
-		return this.getSaldo();
 	}
 
 	public double debitar(double valor) {
@@ -59,11 +59,10 @@ public class Conta {
 		}
 	}
 
-	public double cashBack(double valor) {
-		double valorCashBack = 0.1 * valor;
+	public void cashBack(double valor) {
+		double valorCashBack = valor * CASH_BACK;
 		this.debitar(valor);
 		this.creditar(valorCashBack);
-		return this.getSaldo();
 
 	}
 
