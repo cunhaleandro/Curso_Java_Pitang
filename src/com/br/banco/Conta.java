@@ -1,6 +1,6 @@
 package com.br.banco;
 
-public class Conta {
+public class Conta extends ContaAbstrata {
 	private String numero;
 	private double saldo;
 	private Cliente cliente;
