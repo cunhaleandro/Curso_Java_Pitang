@@ -1,9 +1,7 @@
 package com.br.banco;
 
 public class Conta extends ContaAbstrata {
-	private String numero;
-	private double saldo;
-	private Cliente cliente;
+
 	private static final double PRIMEIRO_VALOR_SALDO = 100;
 	private static final double CASH_BACK = 0.1;
 
