@@ -6,7 +6,7 @@ public class RepositorioClienteArray {
 	private Cliente[] clientes;
 	private int indice = 0;
 	private static final int TAMANHO_CACHE = 100;
-
+	
 	/*
 	 * @ Criação do tamaho do Array para lista de clientes de tamaho 100.
 	 *

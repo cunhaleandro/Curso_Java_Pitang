@@ -11,6 +11,12 @@ public class Conta {
 
 	}
 
+	public Conta(String numero, Cliente cliente) {
+		super();
+		this.numero = numero;
+		this.cliente = cliente;
+	}
+
 	public Conta(String numero, double saldo, Cliente cliente) {
 		super();
 		this.numero = numero;
