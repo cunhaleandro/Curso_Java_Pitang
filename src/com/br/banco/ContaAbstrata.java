@@ -11,9 +11,16 @@ public abstract class ContaAbstrata {
 	}
 
 	public ContaAbstrata(String numero, double saldo) {
-
+super();
 		this.numero = numero;
 		this.saldo = saldo;
+	}
+
+	public ContaAbstrata(String numero, double saldo, Cliente cliente) {
+		super();
+		this.numero = numero;
+		this.saldo = saldo;
+		this.cliente = cliente;
 	}
 
 	public String getNumero() {
