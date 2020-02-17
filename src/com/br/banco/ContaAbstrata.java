@@ -6,8 +6,6 @@ public abstract class ContaAbstrata {
 	private double saldo;
 	private Cliente cliente;
 
-	
-
 	public ContaAbstrata(String numero, double saldo) {
 		this.numero = numero;
 		this.saldo = saldo;
@@ -27,11 +25,11 @@ public abstract class ContaAbstrata {
 		return saldo;
 	}
 
-	private void setNumero(String num) {
+	public void setNumero(String num) {
 		this.numero = num;
 	}
 
-	private void setSaldo(double valor) {
+	public void setSaldo(double valor) {
 		this.saldo = valor;
 	}
 
@@ -48,10 +46,10 @@ public abstract class ContaAbstrata {
 		this.saldo += valor;
 	}
 
-	public double tranferir(Conta contaDestino, double valor) {
+	public void tranferir(Conta contaDestino, double valor) {
 		this.debitar(valor);
 		contaDestino.creditar(valor);
-		return this.getSaldo();
+
 	}
 
 	public abstract void debitar(double valor);

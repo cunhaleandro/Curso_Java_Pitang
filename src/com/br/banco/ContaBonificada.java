@@ -1,11 +1,11 @@
 package com.br.banco;
 
-public class ContaBonificada extends ContaAbstrata {
+public class ContaBonificada extends Conta {
 	private static final double TAXA_BONUS = 0.1;
 	private double bonus;
 
-	public ContaBonificada() {
-
+	public ContaBonificada(String numero, double saldo) {
+		super(numero, saldo);
 	}
 
 	public ContaBonificada(String numero, double saldo, Cliente cliente) {
@@ -28,9 +28,15 @@ public class ContaBonificada extends ContaAbstrata {
 
 	}
 
-	@Override
-	public double debitar(double valor) {
-	
-		return 0;
+	public void debitar(double valor) {
+		if (valor > this.getSaldo()) {
+
+			System.out.println("Operação invalida! O valor não pode ser maior que o saldo");
+
+		} else {
+			this.setSaldo(this.getSaldo() - valor);
+			System.out.println("Operação invalida!");
+		}
+
 	}
 }

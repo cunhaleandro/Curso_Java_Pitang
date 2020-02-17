@@ -1,24 +1,31 @@
 package com.br.banco;
 
-public class ContaPoupanca extends ContaAbstrata {
+public class ContaPoupanca extends Conta {
+	public static final double TAXA = 0.001;
 
-	public ContaPoupanca() {
+	public ContaPoupanca(String numero, Double saldo) {
 
+		super(numero, saldo);
 	}
 
-	public ContaPoupanca(String numero, double saldo, Cliente cliente) {
+	public ContaPoupanca(String numero, double saldo, Cliente cliente, double imposto) {
 		super(numero, saldo, cliente);
 
 	}
 
-	public void renderJuros(double taxa) {
-		super.setSaldo(super.getSaldo() * taxa);
+	public void renderJuros() {
+		super.setSaldo(super.getSaldo() * TAXA);
 
 	}
 
-	@Override
-	public double debitar(double valor) {
-		// TODO Auto-generated method stub
-		return 0;
+	public void debitar(double valor) {
+		if (valor > this.getSaldo()) {
+
+			System.out.println("Operação invalida! O valor não pode ser maior que o saldo");
+
+		} else {
+			this.setSaldo(this.getSaldo() - valor);
+			System.out.println("Operação invalida!");
+		}
 	}
 }

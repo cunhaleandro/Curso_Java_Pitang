@@ -2,15 +2,16 @@ package com.br.banco;
 
 public class ContaImposto extends ContaAbstrata {
 	public double imposto;
-	public static final double TAXA = 0.001; //0,1%
+	public static final double TAXA = 0.001; // 0,1%
 
-	public ContaImposto (String n,Cliente c) {
+	public ContaImposto(String numero, Double saldo) {
 
-		super (numero,saldo);
-}
+		super(numero, saldo);
+	}
 
-	public ContaImposto() {
-		
+	public ContaImposto(String numero, double saldo, Cliente cliente, double imposto) {
+		super(numero, saldo, cliente);
+		this.imposto = imposto;
 	}
 
 	public double getImposto() {
@@ -21,13 +22,9 @@ public class ContaImposto extends ContaAbstrata {
 		this.imposto = imposto;
 	}
 
-	@Override
 	public void debitar(double valor) {
 		double imposto = valor * TAXA;
 
-		super.debitar(valor + imposto)
-		
 	}
-	
-	
+
 }

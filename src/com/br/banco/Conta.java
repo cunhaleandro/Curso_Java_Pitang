@@ -5,19 +5,23 @@ public class Conta extends ContaAbstrata {
 	private static final double PRIMEIRO_VALOR_SALDO = 100;
 	private static final double CASH_BACK = 0.1;
 
-	public Conta() {
-		
+	public Conta(String numero, double saldo) {
+		super(numero, saldo);
 	}
 
-	public double debitar(double valor) {
-		super(getNumero(), getSaldo());
+	public Conta(String numero, double saldo, Cliente cliente) {
+		super(numero, saldo, cliente);
+	}
+
+	public void debitar(double valor) {
+
 		if (valor > this.getSaldo()) {
-		super.(this.getSaldo()) -= valor;
+
 			System.out.println("Operação invalida! O valor não pode ser maior que o saldo");
-			return this.getSaldo();
 
 		} else {
-			return this.getSaldo();
+			this.setSaldo(this.getSaldo() - valor);
+
 		}
 	}
 
