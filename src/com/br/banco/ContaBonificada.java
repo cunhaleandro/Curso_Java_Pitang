@@ -1,6 +1,6 @@
 package com.br.banco;
 
-public class ContaBonificada extends Conta {
+public class ContaBonificada extends ContaAbstrata {
 	private static final double TAXA_BONUS = 0.1;
 	private double bonus;
 
@@ -26,5 +26,11 @@ public class ContaBonificada extends Conta {
 		this.bonus = this.bonus + (valor * TAXA_BONUS);
 		super.creditar(valor);
 
+	}
+
+	@Override
+	public double debitar(double valor) {
+	
+		return 0;
 	}
 }

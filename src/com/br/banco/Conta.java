@@ -6,11 +6,11 @@ public class Conta extends ContaAbstrata {
 	private static final double CASH_BACK = 0.1;
 
 	public Conta() {
-		super(this.getNumero(), this.getSaldo());
+		
 	}
 
 	public double debitar(double valor) {
-		
+		super(getNumero(), getSaldo());
 		if (valor > this.getSaldo()) {
 		super.(this.getSaldo()) -= valor;
 			System.out.println("Operação invalida! O valor não pode ser maior que o saldo");
