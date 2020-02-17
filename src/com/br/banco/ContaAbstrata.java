@@ -6,18 +6,14 @@ public abstract class ContaAbstrata {
 	private double saldo;
 	private Cliente cliente;
 
-	public ContaAbstrata() {
-
-	}
+	
 
 	public ContaAbstrata(String numero, double saldo) {
-		super();
 		this.numero = numero;
 		this.saldo = saldo;
 	}
 
 	public ContaAbstrata(String numero, double saldo, Cliente cliente) {
-		super();
 		this.numero = numero;
 		this.saldo = saldo;
 		this.cliente = cliente;
@@ -31,11 +27,11 @@ public abstract class ContaAbstrata {
 		return saldo;
 	}
 
-	public void setNumero(String num) {
+	private void setNumero(String num) {
 		this.numero = num;
 	}
 
-	public void setSaldo(double valor) {
+	private void setSaldo(double valor) {
 		this.saldo = valor;
 	}
 
@@ -43,7 +39,7 @@ public abstract class ContaAbstrata {
 		return cliente;
 	}
 
-	public void setCliente(Cliente cliente) {
+	private void setCliente(Cliente cliente) {
 
 		this.cliente = cliente;
 	}
@@ -58,5 +54,5 @@ public abstract class ContaAbstrata {
 		return this.getSaldo();
 	}
 
-	public abstract double debitar(double valor);
+	public abstract void debitar(double valor);
 }
